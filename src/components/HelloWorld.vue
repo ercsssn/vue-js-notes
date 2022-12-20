@@ -1,7 +1,9 @@
 <template>
   <div>
-    <input type="text" v-model="inputText" value="initial value">
-    <p>inputText: {{ inputText }}</p>
+    <label><input type="radio" v-model="value" value="one"> One</label>
+    <label><input type="radio" v-model="value" value="two"> Two</label>
+    <label><input type="radio" v-model="value" value="three"> Three</label>
+    <p>The value is {{ value }}</p>
   </div>
 </template>
 
@@ -11,7 +13,7 @@ export default {
   name: 'InputText',
   data () {
     return {
-      inputText: ''
+      value: 'one'
     }
   }
 }
