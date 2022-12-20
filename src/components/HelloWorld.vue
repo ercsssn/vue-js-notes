@@ -1,20 +1,18 @@
 <template>
-  <p>{{ seconds }} seconds have elapsed since you opened the page.</p>
+  <div>
+    <input type="text" v-model="inputText" value="initial value">
+    <p>inputText: {{ inputText }}</p>
+  </div>
 </template>
 
 <script>
 
 export default {
-  name: 'Timer',
+  name: 'InputText',
   data () {
     return {
-      seconds: 0
+      inputText: ''
     }
-  },
-  created() {
-    setInterval(() => {
-      this.seconds++;
-    }, 1000);
   }
 }
 </script>

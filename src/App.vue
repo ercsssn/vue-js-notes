@@ -1,17 +1,17 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <Timer/>
+    <InputText/>
   </div>
 </template>
 
 <script>
-import Timer from './components/HelloWorld'
+import InputText from './components/HelloWorld'
 
 export default {
   name: 'App',
   components: {
-    Timer
+    InputText
   }
 }
 </script>
