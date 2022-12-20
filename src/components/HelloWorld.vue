@@ -1,19 +1,23 @@
 <template>
   <div>
-    <label><input type="radio" v-model="value" value="one"> One</label>
-    <label><input type="radio" v-model="value" value="two"> Two</label>
-    <label><input type="radio" v-model="value" value="three"> Three</label>
-    <p>The value is {{ value }}</p>
+    <ul>
+      <li v-for="number in filterPositive(numbers)">{{ number }}</li>
+    </ul>
   </div>
 </template>
 
 <script>
 
 export default {
-  name: 'InputText',
+  name: 'PositiveNumbers',
   data () {
     return {
-      value: 'one'
+      numbers: [-5, 0, 2, -1, 1, 0.5]
+    }
+  },
+  methods: {
+    filterPositive(numbers) {
+      return numbers.filter((number) => number >= 0);
     }
   }
 }

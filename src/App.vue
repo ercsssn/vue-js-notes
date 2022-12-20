@@ -1,17 +1,17 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <InputText/>
+    <PositiveNumbers/>
   </div>
 </template>
 
 <script>
-import InputText from './components/HelloWorld'
+import PositiveNumbers from './components/HelloWorld'
 
 export default {
   name: 'App',
   components: {
-    InputText
+    PositiveNumbers
   }
 }
 </script>
