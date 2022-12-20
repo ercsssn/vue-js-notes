@@ -1,18 +1,20 @@
 <template>
-  <p v-if="hours < 12">Good morning!</p>
-  <p v-else-if="hours >= 12 && hours < 18">Good afternoon!</p>
-  <p v-else-if="hours >= 18">Good evening!</p>
+  <p>{{ seconds }} seconds have elapsed since you opened the page.</p>
 </template>
 
 <script>
 
 export default {
-  name: 'HelloWorld',
+  name: 'Timer',
   data () {
     return {
-      hours: new Date().getHours()
-
+      seconds: 0
     }
+  },
+  created() {
+    setInterval(() => {
+      this.seconds++;
+    }, 1000);
   }
 }
 </script>
