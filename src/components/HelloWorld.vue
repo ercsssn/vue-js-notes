@@ -1,6 +1,8 @@
 <template>
   <div>
-    <p>Sum of numbers: {{ numberTotal }}</p>
+    <input type="text" v-model="inputValue">
+    
+    <p>Five seconds ago, the input said "{{ oldInputValue }}".</p>
   </div>
 </template>
 
@@ -10,19 +12,16 @@ export default {
   name: 'PositiveNumbers',
   data () {
     return {
-      numbers: [5, 8, 3],
+      inputValue: '',
+      oldInputValue: ''
     }
   },
-  computed: {
-    numberTotal: {
-      get() {
-        return this.numbers.reduce((sum, val) => sum + val);
-      },
-      set(newValue) {
-        const oldValue = this.numberTotal;
-        const difference = newValue - oldValue;
-        this.numbers.push(difference);
-      }
+  watch: {
+    inputValue() {
+      const newValue = this.inputValue;
+      setTimeout(() => {
+        this.oldInputValue = newValue;
+      }, 5000);
     }
   }
 }
