@@ -1,5 +1,6 @@
 <template>
   <div>
+    <p>Sum of numbers: {{ numberTotal }}</p>
   </div>
 </template>
 
@@ -9,15 +10,19 @@ export default {
   name: 'PositiveNumbers',
   data () {
     return {
-      value: 10
+      numbers: [5, 8, 3],
     }
   },
   computed: {
-    doubleValue() {
-
-      console.log('doubleValue computed property changed')
-
-      return this.value * 2;
+    numberTotal: {
+      get() {
+        return this.numbers.reduce((sum, val) => sum + val);
+      },
+      set(newValue) {
+        const oldValue = this.numberTotal;
+        const difference = newValue - oldValue;
+        this.numbers.push(difference);
+      }
     }
   }
 }
