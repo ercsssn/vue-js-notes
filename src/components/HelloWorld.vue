@@ -1,8 +1,5 @@
 <template>
   <div>
-    <ul>
-      <li v-for="number in filterPositive(numbers)">{{ number }}</li>
-    </ul>
   </div>
 </template>
 
@@ -12,12 +9,15 @@ export default {
   name: 'PositiveNumbers',
   data () {
     return {
-      numbers: [-5, 0, 2, -1, 1, 0.5]
+      value: 10
     }
   },
-  methods: {
-    filterPositive(numbers) {
-      return numbers.filter((number) => number >= 0);
+  computed: {
+    doubleValue() {
+
+      console.log('doubleValue computed property changed')
+
+      return this.value * 2;
     }
   }
 }
