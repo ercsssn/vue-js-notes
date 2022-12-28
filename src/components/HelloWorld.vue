@@ -1,22 +1,24 @@
 <template>
   <div>
-    <button v-on:click="increase">Click to increase counter</button>
-    <p>You've clicked the button {{ counter }}</p> times.
+    <form @keyup="handleKeyup">...</form>
   </div>
 </template>
 
 <script>
 
 export default {
-  name: 'PositiveNumbers',
+  name: 'VuePractice',
   data () {
     return {
       counter: 0
     }
   },
   methods: {
-    increase(e) {
-      this.counter++;
+    handleKeyup(e) {
+      if (e.keyCode === 65) {
+        // do something
+        console.log('gg');
+      }
     }
   }
 }
