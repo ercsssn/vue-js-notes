@@ -1,6 +1,20 @@
+
+<style>
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
+  }
+</style>
+
 <template>
   <div>
-    <form @keyup="handleKeyup">...</form>
+    <button @click="divVisible = !divVisible">Toggle visibility</button>
+
+    <transition name="fade">
+      <div v-if="divVisible">This content is sometimes hidden</div>
+    </transition>
   </div>
 </template>
 
@@ -10,15 +24,7 @@ export default {
   name: 'VuePractice',
   data () {
     return {
-      counter: 0
-    }
-  },
-  methods: {
-    handleKeyup(e) {
-      if (e.keyCode === 65) {
-        // do something
-        console.log('gg');
-      }
+      divVisible: true
     }
   }
 }
