@@ -1,17 +1,17 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <PositiveNumbers/>
+    <VuePractice/>
   </div>
 </template>
 
 <script>
-import PositiveNumbers from './components/HelloWorld'
+import VuePractice from './components/HelloWorld'
 
 export default {
   name: 'App',
   components: {
-    PositiveNumbers
+    VuePractice
   }
 }
 </script>
