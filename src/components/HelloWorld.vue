@@ -1,8 +1,7 @@
 <template>
   <div>
-    <input type="text" v-model="inputValue">
-    
-    <p>Five seconds ago, the input said "{{ oldInputValue }}".</p>
+    <button v-on:click="increase">Click to increase counter</button>
+    <p>You've clicked the button {{ counter }}</p> times.
   </div>
 </template>
 
@@ -12,16 +11,12 @@ export default {
   name: 'PositiveNumbers',
   data () {
     return {
-      inputValue: '',
-      oldInputValue: ''
+      counter: 0
     }
   },
-  watch: {
-    inputValue() {
-      const newValue = this.inputValue;
-      setTimeout(() => {
-        this.oldInputValue = newValue;
-      }, 5000);
+  methods: {
+    increase(e) {
+      this.counter++;
     }
   }
 }
