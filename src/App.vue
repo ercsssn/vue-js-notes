@@ -1,17 +1,17 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <HelloWorld/>
+    <display-number v-bind:number="number"></display-number>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import DisplayNumber from './components/HelloWorld'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    DisplayNumber
   }
 }
 </script>

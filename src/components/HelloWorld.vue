@@ -1,15 +1,20 @@
 <template>
-  <div class="hello">
-    
-  </div>
+  <p>The number is {{ number }}</p>
 </template>
 
 <script>
+
 export default {
-  name: 'HelloWorld',
+  name: 'display-number',
+  created() {
+    setInterval(() => {
+      this.number++;
+    }, 1000);
+  },
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      number: 0
     }
   }
 }
