@@ -1,4 +1,4 @@
-# vue-notes
+# vue-js-notes
 
 > A Vue.js project
 
